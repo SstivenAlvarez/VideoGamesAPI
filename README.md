@@ -45,3 +45,49 @@ Si la configuración es correcta, el servidor iniciará en
 http://localhost:3000
 
 A partir de ese momento la API estará lista para realizar las pruebas.
+
+
+Endpoints
+Autenticación
+
+POST /api/auth/register
+Permite registrar un nuevo usuario en la aplicación.
+
+POST /api/auth/login
+Permite iniciar sesión y obtener un token JWT para acceder a los endpoints protegidos.
+Estudios
+
+GET /api/studios
+Obtiene la lista de todos los estudios registrados.
+
+GET /api/studios/:id
+Obtiene la información de un estudio a partir de su identificador.
+
+POST /api/studios
+Crea un nuevo estudio. Requiere autenticación mediante JWT.
+
+PUT /api/studios/:id
+Actualiza la información de un estudio existente. Requiere autenticación.
+
+DELETE /api/studios/:id
+Elimina un estudio. Si tiene videojuegos asociados, la operación será rechazada.
+
+GET /api/studios/:id/games
+Obtiene todos los videojuegos pertenecientes a un estudio.
+Videojuegos
+
+GET /api/games
+Obtiene el listado de todos los videojuegos junto con el nombre del estudio.
+
+GET /api/games/:id
+Obtiene la información de un videojuego por su identificador.
+
+POST /api/games
+Crea un nuevo videojuego. Requiere autenticación.
+
+PUT /api/games/:id
+Actualiza la información de un videojuego existente. Requiere autenticación.
+
+DELETE /api/games/:id
+Elimina un videojuego de la base de datos.
+
